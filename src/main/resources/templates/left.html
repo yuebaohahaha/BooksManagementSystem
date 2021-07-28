@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>图书管理系统</title>
+<link href="static/css/style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript" src="static/js/jquery.js"></script>
+
+<script type="text/javascript">
+$(function(){	
+	//导航切换
+	$(".menuson li").click(function(){
+		$(".menuson li.active").removeClass("active")
+		$(this).addClass("active");
+	});
+	
+	$('.title').click(function(){
+		var $ul = $(this).next('ul');
+		$('dd').find('ul').slideUp();
+		if($ul.is(':visible')){
+			$(this).next('ul').slideUp();
+		}else{
+			$(this).next('ul').slideDown();
+		}
+	});
+})	
+</script>
+
+
+</head>
+
+<body style="background:#f0f9fd;">
+	<div class="lefttop"><span></span>图书管理系统</div>
+
+    <dl class="leftmenu">
+
+    <dd>
+    <div class="title" >
+    <span><img src="static/images/leftico01.png" /></span>推荐书籍
+    </div>
+    	<ul class="menuson">
+        <li class="active"><cite></cite><a href="xianxingbiaoHtml">平凡的世界</a><i></i></li>
+            <li ><cite></cite><a href="duilieHtml" >活着</a><i></i></li>
+            <li ><cite></cite><a href="jiheHtml" >存在与时间</a><i></i></li>
+        <li ><cite></cite><a href="shuHtml" >挪威的森林</a><i></i></li>
+        <li ><cite></cite><a href="tuHtml" >围城</a><i></i></li>
+
+        </ul>
+    </dd>
+
+    
+    <dd>
+    <div class="title">
+    <span><img src="static/images/leftico02.png" /></span>书籍管理
+    </div>
+    <ul class="menuson">
+        <li><cite></cite><a  href="tabHtml">推荐书籍列表</a><i></i></li>
+        <li><cite></cite><a  href="articleHtml">书籍管理</a><i></i></li>
+    </ul>
+    </dd> 
+    
+    
+    <dd><div class="title"><span><img src="static/images/leftico03.png" /></span>个人信息维护</div>
+    <ul class="menuson">
+        <li><cite></cite><a href="imgtableHtml">重置密码</a><i></i></li>
+    </ul>    
+    </dd>
+
+    </dl>
+    <dl>
+    <div class="index" padding-left>
+        <div class="iconlist">
+            <b><br/><br/><br/><br/>Admin，欢迎使用图书管理系统    <div class="xline"></div><br/><br/><br/><br/>JDK版本：JDK1.8<br/><br/>服务器：Tomcat8.5.57<br/><br/>数据库：Mysql<br/><br/>开发环境：IntelliJ IDEA<br/><br/>20207035010 朱彤</b>
+        </div>
+    </div>
+    </dl>
+
+</body>
+</html>

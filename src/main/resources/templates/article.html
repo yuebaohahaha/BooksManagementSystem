@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>书籍管理</title>
+<link href="static/css/style.css" rel="stylesheet" type="text/css" />
+<link href="static/css/select.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="static/js/jquery.js"></script>
+<script type="text/javascript" src="static/js/jquery.idTabs.min.js"></script>
+<script type="text/javascript" src="static/js/select-ui.min.js"></script>
+<script type="text/javascript" src="static/editor/kindeditor.js"></script>
+
+<script type="text/javascript">
+    KE.show({
+        id : 'content7',
+        cssPath : './index.css'
+    });
+  </script>
+  
+<script type="text/javascript">
+$(document).ready(function(e) {
+    $(".select1").uedSelect({
+		width : 345			  
+	});
+	$(".select2").uedSelect({
+		width : 167  
+	});
+	$(".select3").uedSelect({
+		width : 100
+	});
+});
+</script>
+<script>
+    function gengxin(){
+        document.form1.action="/update";
+        document.form1.submit();
+    }
+    function chaxun(){
+        document.form1.action="/query";
+        document.form1.submit();
+    }
+    function shanchu(){
+        document.form1.action="/shanchu";
+        document.form1.submit();
+    }
+</script>
+</head>
+
+<body>
+
+	<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+    <li><a href="leftHtml">图书管理系统</a></li>
+    <li><a href="#">书籍管理</a></li>
+    </ul>
+    </div>
+    
+    <div class="formbody">
+    
+    
+    <div id="usual1" class="usual"> 
+    
+    <div class="itab">
+  	<ul> 
+    <li><a href="#tab1" class="selected">书籍查看</a></li>
+    <li><a href="#tab2">新增书籍</a></li>
+
+  	</ul>
+    </div>
+
+
+
+        <form  method="post" name="form1">
+            <div id="tab1" class="tabson">
+
+
+                <ul class="seachform">
+
+                    <li><label>标题</label><input name="biaoti" type="text" class="scinput" /></li>
+                    <li><label>&nbsp;</label><input name="" type="button" onclick="chaxun()" class="scbtn" value="查询"/></li>
+                </ul>
+
+
+                <table class="tablelist">
+                    <thead>
+                    <tr>
+                        <th><input name="" type="checkbox" value="" checked="checked"/></th>
+                        <th>编号</th>
+                        <th>标题</th>
+                        <th>内容</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="articles:${articles}">
+                        <td><input name="" type="checkbox" value="" /></td>
+                        <td  th:text="${articles.id}"></td>
+                        <td th:text="${articles.type}"></td>
+                        <td th:text="${articles.details}"></td>
+                        <!-- -->
+                        <td> <a th:href="@{/gengxin?(id=${articles.id})}">修改</a>&nbsp&nbsp &nbsp&nbsp<a th:href="@{/shanchu?(id=${articles.id})}">删除</a>   </td>
+                    </tr>
+
+
+                    </tbody>
+                </table>
+
+            </div>
+        </form>
+
+        <div id="tab2" class="tabson">
+
+            <div class="formtext">欢迎使用新增书籍功能</div>
+            <form action="/addArticle" method="post">
+            <ul class="forminfo">
+                <li><label>书籍标题</label><input name="type" type="text" class="dfinput" /></li>
+                <li><label>书籍简介</label><textarea name="details" cols="" rows="" class="textinput"></textarea></li>
+                <li><label>&nbsp;</label><input name="" type="submit" class="btn" value="确认增加"/></li>
+            </ul>
+            </form>
+        </div>
+
+
+
+    </div>
+ 
+	<script type="text/javascript"> 
+      $("#usual1 ul").idTabs(); 
+    </script>
+    
+    <script type="text/javascript">
+	$('.tablelist tbody tr:odd').addClass('odd');
+	</script>
+    
+    
+    
+    
+    
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>推荐书籍列表</title>
+<link href="static/css/style.css" rel="stylesheet" type="text/css" />
+<link href="static/css/select.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="static/js/jquery.js"></script>
+<script type="text/javascript" src="static/js/jquery.idTabs.min.js"></script>
+<script type="text/javascript" src="static/js/select-ui.min.js"></script>
+<script type="text/javascript" src="static/editor/kindeditor.js"></script>
+
+<script type="text/javascript">
+    KE.show({
+        id : 'content7',
+        cssPath : './index.css'
+    });
+  </script>
+  
+<script type="text/javascript">
+$(document).ready(function(e) {
+    $(".select1").uedSelect({
+		width : 345			  
+	});
+	$(".select2").uedSelect({
+		width : 167  
+	});
+	$(".select3").uedSelect({
+		width : 100
+	});
+});
+</script>
+</head>
+
+<body>
+
+	<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+    <li><a href="leftHtml">图书管理系统</a></li>
+    <li><a href="#">推荐书籍列表</a></li>
+    </ul>
+    </div>
+    
+    <div class="formbody">
+    
+    
+    <div id="usual1" class="usual"> 
+    
+    <div class="itab">
+  	<ul> 
+    <li><a href="#tab1" class="selected">推荐书籍列表</a></li>
+  	</ul>
+    </div>
+
+  	<div id="tab1" class="tabson">
+
+
+    <table class="tablelist">
+    	<thead>
+    	<tr>
+        <th>编号<i class="sort"><img src="static/images/px.gif" /></i></th>
+        <th>书名</th>
+        <th>查看</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+
+        <td>001</td>
+        <td>平凡的世界</td>
+            <td><a href="xianxingbiaoHtml" class="tablelink">查看</a>  </td>
+        </tr> 
+        
+        <tr>
+
+        <td>002</td>
+        <td>活着</td>
+            <td><a href="duilieHtml" class="tablelink">查看</a>  </td>
+        </tr>
+        
+        <tr>
+
+        <td>003</td>
+        <td>存在与时间</td>
+            <td><a href="jiheHtml" class="tablelink">查看</a>  </td>
+        </tr>
+        
+        <tr>
+
+        <td>004</td>
+        <td>挪威的森林</td>
+
+        <td><a href="shuHtml" class="tablelink">查看</a>  </td>
+        </tr>
+        
+        <tr>
+
+        <td>005</td>
+        <td>围城</td>
+        <td><a href="tuHtml" class="tablelink">查看</a>   </td>
+        </tr>
+
+
+        </tbody>
+    </table>
+    
+
+
+        </div>
+
+    </div>
+ 
+	<script type="text/javascript"> 
+      $("#usual1 ul").idTabs(); 
+    </script>
+    
+    <script type="text/javascript">
+	$('.tablelist tbody tr:odd').addClass('odd');
+	</script>
+    
+    
+    
+    
+    
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE >
+<html xmlns: xmlns:th="http://www.w3.org/1999/xhtml"  th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>图书管理系统</title>
+<link href="static/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="static/js/jquery.js"></script>
+<script language="javascript">
+$(function(){	
+
+	$(".imglist li").click(function(){
+		$(".imglist li.selected").removeClass("selected")
+		$(this).addClass("selected");
+	})	
+})	
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".click").click(function(){
+  $(".tip").fadeIn(200);
+  });
+  
+  $(".tiptop a").click(function(){
+  $(".tip").fadeOut(200);
+});
+
+  $(".sure").click(function(){
+  $(".tip").fadeOut(100);
+});
+
+  $(".cancel").click(function(){
+  $(".tip").fadeOut(100);
+});
+
+});
+</script>
+</head>
+
+
+<body>
+
+	<div class="place">
+    <span>位置：</span>
+    <ul class="placeul">
+    <li><a href="/leftHtml">图书管理系统</a></li>
+    <li><a href="#">个人信息维护</a></li>
+    </ul>
+    </div>
+    
+
+
+    
+<script type="text/javascript">
+	$('.imgtable tbody tr:odd').addClass('odd');
+	</script>
+
+
+    <!-- 修改密码窗口 -->
+    <div id="passwordDialog" style="padding: 20px">
+        <form id="editPassword" action="updateuser" method="post">
+            <table cellpadding="8" >
+                <tr>
+                    <td>用户名:</td>
+                    <td>
+                        <input id="adminame" name="username" style ="width: 200px; height: 30px;" class="easyui-textbox" type="text"  data-options="required:true, missingMessage:'请输入原密码'" /><div class="xline"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>原密码:</td>
+                    <td>
+                        <input id="old_password" name="password" style ="width: 200px; height: 30px;" class="easyui-textbox" type="password"  data-options="required:true, missingMessage:'请输入原密码'" /><div class="xline"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>新密码:</td>
+                    <td><input id="re_password" name ="newpassword" style="width: 200px; height: 30px;" class="easyui-textbox" type="password" validType="equals['#new_password']"  data-options="required:true, missingMessage:'再次输入密码'" /><div class="xline"></div></td>
+                </tr>
+                <tr>
+                    <div class="rightinfo">
+
+                        <div class="tools">
+
+                            <ul class="toolbar">
+                                <li class="click"><span><img src="static/images/t02.png" /></span>重置密码</li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                    <div class="tip">
+                        <div class="tiptop"><span>提示信息</span><a></a></div>
+
+                        <div class="tipinfo">
+                            <span><img src="static/images/ticon.png" /></span>
+                            <div class="tipright">
+                                <p>是否确认对密码的修改 ？</p>
+                                <cite>如果是请点击确定按钮 ，否则请点取消。</cite>
+                            </div>
+                        </div>
+
+                        <div class="tipbtn">
+                            <input name="" type="submit"  class="sure" value="确定" />&nbsp;
+                            <input name="" type="button"  class="cancel" value="取消" />
+                        </div>
+
+                    </div>
+                </tr>
+            </table>
+        </form>
+        <h2 th:utext="${msg1}"></h2>
+    </div>
+</body>
+
+</html>
